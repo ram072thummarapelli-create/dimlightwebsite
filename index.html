@@ -237,7 +237,220 @@
         <div class="stat-card"><div style="font-weight:700">Recognition</div><p style="color:var(--muted); margin-top:8px">Festival wins and client accolades.</p></div>
       </div>
     </section>
-     <!-- HERO -->
+  <style>
+    :root{
+      --bg: #fdfdfd;
+      --ink: #0b1220;
+      --muted: #6c757d;
+      --accent-1: #e67e22;
+      --accent-2: #f39c12;
+      --panel: #fdf6e9;
+      --glass: rgba(11,17,32,0.08);
+      --max-w: 1200px;
+      --radius: 16px;
+      --gap: 32px;
+      --image-h: 380px;
+      --shadow-sm: 0 4px 12px rgba(2,6,23,0.03);
+      --shadow-md: 0 10px 30px rgba(2,6,23,0.06);
+      --shadow-lg: 0 20px 50px rgba(2,6,23,0.08);
+    }
+
+    /* base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:var(--gap);
+      display:flex;
+      justify-content:center;
+      line-height:1.6;
+      font-size:16px;
+    }
+    h1,h2,h3,h4{margin:0;line-height:1.15;font-weight:800;color:var(--ink)}
+    h1{font-size:42px;max-width:800px}
+    p.lede{font-size:20px;max-width:680px;color:var(--muted)}
+    .highlight{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
+    .kicker{
+      font-size:16px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:var(--accent-1)
+    }
+
+    /* layout */
+    .page{
+      max-width:var(--max-w);
+      width:100%;
+    }
+    section{
+      padding:40px 0;
+      text-align:center;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:var(--gap);
+      text-align:left;
+      padding-bottom:0;
+    }
+    .row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:var(--gap);
+    }
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:var(--gap);
+      text-align:left;
+    }
+    .text{
+      max-width:500px;
+    }
+    .card{
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid var(--glass);
+      padding:var(--gap);
+      box-shadow:var(--shadow-md);
+      text-align:left;
+    }
+
+    /* sections */
+    .panel{
+      padding:var(--gap);
+      border-radius:var(--radius);
+      background:var(--panel);
+      border:1px solid var(--glass);
+      box-shadow:var(--shadow-lg);
+    }
+    .philosophy-image{
+      border-radius:var(--radius);
+      height:var(--image-h);
+      object-fit:cover;
+      display:block;
+      margin-bottom:var(--gap);
+    }
+    .values{
+      text-align:center;
+      padding-bottom:0;
+    }
+    .values h2{
+      font-size:32px;
+      margin-bottom:var(--gap);
+    }
+    .value-card h3{
+      font-size:22px;
+      margin-bottom:8px;
+    }
+    .team{
+      padding-bottom:0;
+    }
+    .team h2{
+      font-size:32px;
+      margin-bottom:var(--gap);
+    }
+    .team .founder{
+      margin-bottom:var(--gap);
+    }
+    .founder img{
+      height:var(--image-h);
+      object-fit:cover;
+      display:block;
+    }
+    .team-member img{
+      height:200px;
+      object-fit:cover;
+      margin-bottom:12px;
+    }
+    .team-member h4{
+      font-size:18px;
+      margin-bottom:4px;
+    }
+    .culture-card{
+      margin-top:var(--gap);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:var(--gap);
+      align-items:center;
+    }
+    .culture-card img{
+      height:var(--image-h);
+      object-fit:cover;
+    }
+    .final{
+      text-align:center;
+      background:var(--card);
+      padding:80px;
+      border-radius:var(--radius);
+      border:1px solid var(--glass);
+      background:linear-gradient(180deg,#fffdfb,#fff);
+      box-shadow:var(--shadow-lg);
+    }
+    .final h2{
+      font-size:38px;
+      font-weight:800;
+      margin-bottom:16px;
+      line-height:1.12;
+    }
+    .final p{
+      font-size:18px;
+      color:var(--muted);
+      margin:0 auto 20px;
+      max-width:720px;
+      line-height:1.7;
+    }
+    .btn{
+      display:inline-block;
+      padding:14px 32px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      color:#fff;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(230,126,34,0.3);
+      transition:transform .18s ease;
+    }
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 28px rgba(230,126,34,0.4);
+    }
+
+    @media (max-width:1060px){
+      .hero{grid-template-columns:1fr;padding:40px}
+      .row{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .split img{height:300px}
+      .values{grid-template-columns:1fr 1fr}
+      .founder{padding:40px}
+      .founder img{height:300px}
+      .culture-card{grid-template-columns:1fr}
+      .culture-card img{height:300px}
+    }
+    @media (max-width:600px){
+      .hero h1{font-size:32px}
+      .row, .values, .founder{grid-template-columns:1fr}
+      .final{padding:40px 20px}
+      .final h2{font-size:28px}
+      .values{padding:40px 20px}
+      .founder{padding:40px 20px}
+    }
+  </style>
+</head>
+<body>
+  <main class="page" role="main">
+
+    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div>
         <div class="kicker" aria-hidden="true">ABOUT DIMLIGHT</div>

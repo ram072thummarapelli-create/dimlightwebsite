@@ -10,7 +10,10 @@
   --max-width: 1200px;
   --heading-spacing: 44px;
   --heading-bottom: 12px;
+  --portfolio-gap: 18px;
+  --thumb-height: 220px;
 }
+
 *{box-sizing:border-box}
 body{
   margin:0;
@@ -49,7 +52,7 @@ header{
 .brand h1{font-size:1rem; margin-bottom:2px}
 .brand p{font-size:12px; opacity:0.9; margin:0}
 .tabs{display:flex; gap:10px; background: rgba(255,255,255,0.06); padding:6px; border-radius:999px}
-.tab-btn{Padding:10px 14px; border-radius:999px; border:0; background:transparent; color: #dbeafe; font-weight:600; cursor:pointer; transition:all .18s; font-size:0.95rem}
+.tab-btn{padding:10px 14px; border-radius:999px; border:0; background:transparent; color: #dbeafe; font-weight:600; cursor:pointer; transition:all .18s; font-size:0.95rem}
 .tab-btn.active{background:var(--card); color:var(--nav-bg); box-shadow:0 8px 22px rgba(2,6,23,0.15)}
 main{padding:36px 0}
 section{padding:0 0 64px 0}
@@ -111,6 +114,83 @@ footer nav{display:flex; gap:12px; justify-content:center; margin-top:12px; flex
   text-align: center;
 }
 .section-heading.left { text-align: left; }
+
+/* ---------- PORTFOLIO GRID (matches your markup) ---------- */
+
+/* container + grid wrapper */
+.section { padding-top: 18px; padding-bottom: 18px; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+.container.grid { display: block; }
+
+/* portfolio-grid layout exactly like your snippet */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 across on desktop */
+  gap: var(--portfolio-gap);
+  align-items: start;
+  margin-top: 18px;
+}
+
+/* each thumb: supports iframe or anchor as you provided */
+.portfolio-grid .thumb,
+.portfolio-grid iframe,
+.portfolio-grid a.thumb {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.04);
+  display: block;
+}
+
+/* iframe sizing and reset */
+.portfolio-grid .thumb iframe,
+.portfolio-grid iframe {
+  width: 100%;
+  height: var(--thumb-height);
+  display: block;
+  border: 0;
+}
+
+/* anchor thumb (link with background cover) */
+.portfolio-grid a.thumb {
+  height: var(--thumb-height);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display:flex;
+  align-items:flex-end;
+  padding: 0;
+}
+
+/* caption inside linked thumb */
+.portfolio-grid a.thumb h4 {
+  margin: 0 12px 12px 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.26));
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* ensure any raw iframe (not wrapped in .thumb) still gets the thumb treatment if placed directly */
+.portfolio-grid > iframe {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.04);
+}
+
+/* responsive: stack to 1 column on small screens */
+@media (max-width: 980px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* keep previous responsive rules */
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr; row-gap:20px}
   .hero-media img{height:320px}

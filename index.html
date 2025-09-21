@@ -392,6 +392,85 @@
         <p style="margin-top:12px; max-width:760px; margin-left:auto; margin-right:auto">Share a brief and we'll respond with a tailored plan and estimate.</p>
       </div>
 
+      <div class="grid">
+
+      <!-- LEFT -->
+      <aside class="left">
+        <h1>Let’s craft something unforgettable.</h1>
+        <p>Tell us about your idea — whether it’s a short film, a brand video, a social funnel, or a viral reel. We’ll reply with a creative plan and estimate.</p>
+        <div class="contact-lines">
+          <div class="contact-item">
+            <div class="emoji">📍</div>
+            <div class="meta">
+              <div class="title">Hyderabad, India</div>
+              <div class="sub">Local meetings by appointment</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="emoji">📞</div>
+            <div class="meta">
+              <div class="title">+91 98765 43210</div>
+              <div class="sub">Call / WhatsApp</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="emoji">✉️</div>
+            <div class="meta">
+              <div class="title">hello@dimlight.com</div>
+              <div class="sub">We usually reply within 24–48 hrs</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT -->
+      <main class="right">
+        <section class="form-card">
+          <h2>Get in touch</h2>
+          <p class="lead">Share a brief and we’ll respond with a tailored plan and estimate.</p>
+
+          <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="_gotcha" class="contact-form">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none"><label>Don’t fill this out: <input name="_gotcha"></label></p>
+
+            <div class="row-2">
+              <div class="field"><input name="name" type="text" placeholder="Your name" required=""></div>
+              <div class="field"><input name="email" type="email" placeholder="Email address" required=""></div>
+            </div>
+
+            <div class="row-2">
+              <div class="field"><input name="phone" type="text" placeholder="Phone (optional)"></div>
+              <div class="field">
+                <select name="service">
+                  <option value="" selected="" hidden="">Select service</option>
+                  <option>Video Production</option>
+                  <option>Marketing Campaign</option>
+                  <option>Branding</option>
+                  <option>Reels &amp; Shorts</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <textarea name="message" placeholder="Tell us about your project" required=""></textarea>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="btn-send">Send</button>
+              <div class="note">We reply within 24–48 hrs</div>
+            </div>
+          </form>
+        </section>
+
+        <section class="map-card">
+          <iframe title="Dimlight location - Hyderabad" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.2202910218555!2d78.40199021485886!3d17.385044988169677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9735d6b9f0bd%3A0x4e7b1c2b6b0e0f2!2sHyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sus!4v1695310000000">
+          </iframe>
+        </section>
+      </main>
+
+    </div>
+
       <form id="contactForm" style="margin-top:20px">
         <input id="name" type="text" placeholder="Your Name" required />
         <input id="email" type="email" placeholder="Your Email" required />
